@@ -14,42 +14,45 @@
     <h3 id="title" style="align-items: center; font-weight: bold; color: #fcfeff;">Register</h3>
     <div class="container-sm" style="max-width: 500px;">
       <div class="card" style="border-radius: 30px; border-width: 3px;">
-        <div class="card-body">
-          <div class="rowItem" style="margin-top: 30px;">
-            Username
-            <input id="msg" type="text">
+        <form>
+          <div class="card-body">
+            <div class="rowItem" style="margin-top: 30px;">
+              Username
+              <input id="msg" type="text" required>
+            </div>
+            <div class="rowItem">
+              Password
+              <input id="pwd" type="text" required>
+            </div>
+            <div class="rowItem">
+              Email addresss
+              <input id="mail" type="email" placeholder="name@example.com" required>
+            </div>
+            <div class="rowItem">
+              <span>
+                <label style="margin-right: 20px;">Gender</label>
+                <input type="radio" name="gender" value="Male" checked>
+                <label>Male</label>
+                <input type="radio" name="gender" value="Female">
+                <label>Female</label>
+              </span>
+            </div>
+            <div class="rowItem" style="margin-bottom: 20px">
+              <span>
+                <label>Favorite Color</label>
+                <input id="color" type="color" value="#01319d">
+              </span>
+            </div>
+            <input id="regButton" class="btn btn-secondary" type="submit" value="Register"/>
+            <div class="rowItem">
+              <span>
+                <label>Already have account? </label>
+                <a href="signIn.html">Here to Login</a>
+              </span>
+            </div>
+            <label id="warning" style="color: rgb(165, 9, 9); margin-top: 20px;"></label>
           </div>
-          <div class="rowItem">
-            Password
-            <input type="text">
-          </div>
-          <div class="rowItem">
-            Email addresss
-            <input type="text" placeholder="name@example.com">
-          </div>
-          <div class="rowItem">
-            <span>
-              <label style="margin-right: 20px;">Gender</label>
-              <input type="radio" name="gender" value="Male" checked>
-              <label>Male</label>
-              <input type="radio"name="gender" value="Female">
-              <label>Female</label>
-            </span>
-          </div>
-          <div class="rowItem" style="margin-bottom: 20px">
-            <span>
-              <label>Favorite Color</label>
-              <input type="color" value="#01319d">
-            </span>
-          </div>
-          <button id="regButton" type="button" class="btn btn-secondary">Register</button>
-          <div class="rowItem">
-            <span>
-              <label>Already have account? </label>
-              <a href="signIn.html">Here to Login</a>
-            </span>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
   <script src="../javaScript/register.js"></script>

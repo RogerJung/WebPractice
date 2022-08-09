@@ -5,10 +5,7 @@
 
     $msg = $_POST['msg'];
 
-    date_default_timezone_set("Asia/Taipei"); 
-    $timestamp = date('Y-m-d H:i:s');
-
-    $sql = "INSERT INTO `message`(`id`, `message`, `timestamp`) VALUES (0, '$msg','$timestamp')";
+    $sql = "INSERT INTO `message`(`Name`) VALUES ('$msg')";
     if(!$send = mysqli_query($conn, $sql)) {
         echo mysqli_error($conn);
     } else {
