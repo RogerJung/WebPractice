@@ -10,87 +10,53 @@
 </head>
 <body style="background-color: #fcfeff;">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="background-color: #3364a2 !important;">
-        <div class="container-fluid">
-          <div class="navbar-brand" style="color: #fcfeff;">FakeBook</div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" href="homePage.html">Member list</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="modifyData.html">Modify data</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="fileManager.html">File manager</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#">Message board</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#">Subscribe</a>
-              </li>
-            </ul>
-            <span class="navbar-text" style="margin-right: 2%; font-weight: bold; color: white;">
-                Hello 123!
-            </span>
-            <button class="btn" type="submit" style="background-color: #cbdef1;">Log out</button>
-          </div>
+      <div class="container-fluid">
+        <div class="navbar-brand" style="color: #fcfeff;">FakeBook</div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="homePage.html">Member list</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="modifyData.html">Modify data</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="fileManager.html">File manager</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Message board</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Subscribe</a>
+            </li>
+          </ul>
+          <span class="navbar-text" style="margin-right: 2%; font-weight: bold; color: white;">
+              Hello 123!
+          </span>
+          <button class="btn" type="submit" style="background-color: #cbdef1;">Log out</button>
         </div>
-      </nav>
-      <header style="height: 50px"></header>
-      <div class="container-sm" style="max-width: 80%;">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Gender</th>
-              <th scope="col">Color</th>
-              <th scope="col">Email</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>mail1</td>
-            </tr>
-            <tr>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-              <td>mail2</td>
-            </tr>
-            <tr>
-              <td>Larry the Bird</td>
-              <td>test</td>
-              <td>@twitter</td>
-              <td>mail3</td>
-            </tr>
-          </tbody>
-        </table>
       </div>
-      <label id = "label">
-          Change this text by clicking on the button
-      </label>
-      <br>
-      <input class="button" id="send" type="submit">
-      <table class="table">
+    </nav>
+    <header style="height: 20px"></header>
+    <div class="container-sm" style="max-width: 80%;">
+      <table class="table table-hover mt-5">
         <thead>
-          <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Gender</th>
-            <th scope="col">Color</th>
-            <th scope="col">Email</th>
-          </tr>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Color</th>
+            </tr>
         </thead>
-        <tbody id="msgTable">
+        <tbody id="message_table">
         </tbody>
       </table>
+    </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <script src="../javaScript/function.js"></script>
 </body>
 </html>
