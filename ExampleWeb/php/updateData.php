@@ -1,0 +1,18 @@
+<?php
+	header('Access-Control-Allow-Origin: *');
+	$conn=mysqli_connect("localhost","root","","fakebook");
+	mysqli_query($conn,"set names utf8");
+
+    $oldname = $_POST['oldname'];
+    $pwd = $_POST['pwd'];
+    $mail = $_POST['mail'];
+    $gender = $_POST['gender'];
+    $color = $_POST['color'];
+
+    $sql = "UPDATE `data` SET `Password`='$pwd', `Email`='$mail', `Gender`='$gender', `Color`='$color' WHERE `Name`='$oldname'";
+    if(!$send = mysqli_query($conn, $sql)) {
+        echo mysqli_error($conn);
+    } else {
+        echo "success";
+    }
+?>

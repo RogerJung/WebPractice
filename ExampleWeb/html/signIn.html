@@ -16,24 +16,28 @@
         <div class="card-body">
           <div class="rowItem" style="margin-top: 30px;">
             Username
-            <input type="text">
+            <input id="msg" type="text">
           </div>
           <div class="rowItem" style="margin-bottom: 20px">
             Password
-            <input type="password">
+            <input id="pwd" type="password">
           </div>
-          <button type="button" class="btn btn-secondary">SignIn</button>
+          <button id="send" type="button" class="btn btn-secondary">SignIn</button>
           <div class="rowItem">
             <span>
               <label>Didn't have account? </label>
               <a href="register.html">Here to Create</a>
             </span>
           </div>
+          <div class="rowItem">
+            <label id="warning" style="color: rgb(160, 2, 2)"></label>
+          </div>
         </div>
       </div>
     </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <script src="../javaScript/signIn.js"></script>
 </body>
 </html>
 
