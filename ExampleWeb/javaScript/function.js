@@ -18,7 +18,7 @@ function refresh() {
                 table += "<tr><td>" + output[num][0] + "</td>";
                 table += "<td>" + output[num][1] + "</td>";
                 table += "<td>" + output[num][2] + "</td>";
-                table += "<td>" + output[num][3] + "</td></tr>";
+                table += "<td>" + "<div style=\"margin-left: 10px;width: 20px; height: 20px ;background-color: " + output[num][3] +";\"></div>" + "</td></tr>";
             }
 
             $("#message_table").html(table);
