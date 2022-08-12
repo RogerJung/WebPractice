@@ -8,11 +8,21 @@
     $mail = $_POST['mail'];
     $gender = $_POST['gender'];
     $color = $_POST['color'];
+    $newname = $_POST['newname'];
 
-    $sql = "UPDATE `data` SET `Password`='$pwd', `Email`='$mail', `Gender`='$gender', `Color`='$color' WHERE `Name`='$oldname'";
-    if(!$send = mysqli_query($conn, $sql)) {
-        echo mysqli_error($conn);
-    } else {
-        echo "success";
+    $check = "SELECT * FROM `data` WHERE `Name`='$newname'";
+    $result = mysqli_query($conn, $check);
+    $num = mysqli_num_rows($result);
+
+    if ($num == 0){
+        $sql = "UPDATE `data` SET `Password`='$pwd', `Email`='$mail', `Gender`='$gender', `Color`='$color', `Name`='$newname' WHERE `Name`='$oldname'";
+        if(!$send = mysqli_query($conn, $sql)) {
+            echo mysqli_error($conn);
+        } else {
+            echo "success";
+        }
+    }
+    else{
+        echo 1;
     }
 ?>

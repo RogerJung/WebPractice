@@ -39,16 +39,18 @@ $(document).ready(function(e) {
             else
                 document.querySelector('[value="Female"]').checked = true;
             document.getElementById('setColor').setAttribute('value',output[3]);
+            document.getElementById('setName').setAttribute('value',output[4]);
         }
     });
 
     $("#send").click(function() {
-        if($("#setName").val() != ""){
+        if($("#setName").val() != "" && $("#setPwd").val() != "" && $("#setMail").val() != ""){
             $.ajax({
                 type: "POST",
                 url: "../php/updateData.php",
                 data: {
                     oldname: name,
+                    newname: $("#setName").val(),
                     pwd: $("#setPwd").val(),
                     mail: $("#setMail").val(),
                     gender: getRadioValue('gender'),
@@ -60,9 +62,15 @@ $(document).ready(function(e) {
                 },
                 success: function(output) {
                     console.log(output);
-                    alert("修改成功!");
+                    if (output == 1)
+                        alert("User name already in use!");
+                    else
+                        alert("Success!");
+                        location.href = ary1[0] + "?username=" + $("#setName").val();
                 }
             });
         }
+        else
+            alert("It couldn't be empty!");
     });
 });

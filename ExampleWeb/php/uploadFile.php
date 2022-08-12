@@ -18,7 +18,7 @@
         $conn=mysqli_connect("localhost","root","","fakebook");
         mysqli_query($conn,"set names utf8");
 
-        $result = mysqli_query($conn, "SELECT * FROM `file` WHERE `Name`='$filename'");
+        $result = mysqli_query($conn, "SELECT * FROM `file` WHERE `Name`='$filename' AND `User`='$name'");
         $num = mysqli_num_rows($result);
         if ($num != 0){
             echo 1;

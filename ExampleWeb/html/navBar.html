@@ -7,13 +7,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#" onclick="changeURL('homePage.html')">Member list</a>
+            <a id="list" class="nav-link" href="#" onclick="changeURL('homePage.html')">Member list</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" onclick="changeURL('modifyData.html')">Modify data</a>
+            <a id="data" class="nav-link" href="#" onclick="changeURL('modifyData.html')">Modify data</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" onclick="changeURL('fileManager.html')">File manager</a>
+            <a id="file" class="nav-link" href="#" onclick="changeURL('fileManager.html')">File manager</a>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" href="#">Message board</a>
@@ -25,16 +25,6 @@
         <span class="navbar-text" style="margin-right: 2%; font-weight: bold; color: white;">
             Hello 
             <label id="username">
-                <script>
-                    var url = location.href;
-                    if(url.indexOf('?')!=-1){
-                        var ary1 = url.split('?');
-                        var ary2 = ary1[1].split('&');
-                        var ary3 = ary2[0].split('=');
-                        var name = ary3[1];
-                    }   
-                    $("#username").html(name);
-                </script>
             </label>
             !
         </span>
@@ -48,4 +38,19 @@
       var url =  e + "?username=" + name;
       location.href=url;
     }
+
+    var url = location.href;
+    if(url.indexOf('?')!=-1){
+      var ary1 = url.split('?');
+      var ary2 = ary1[1].split('&');
+      var ary3 = ary2[0].split('=');
+      var user = ary3[1];
+    }
+    $("#username").html(user);
+    if (ary1[0] == 'http://localhost/WebPractice/ExampleWeb/html/homePage.html')
+      $('#list').addClass('active');
+    if (ary1[0] == 'http://localhost/WebPractice/ExampleWeb/html/modifyData.html')
+      $('#data').addClass('active');
+    if (ary1[0] == 'http://localhost/WebPractice/ExampleWeb/html/fileManager.html')
+      $('#file').addClass('active');
   </script>
