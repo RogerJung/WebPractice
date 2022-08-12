@@ -2,46 +2,6 @@ $(document).ready(function(e) {
 
     refresh();
 
-    $("#but_upload").click(function(){
-        var url = location.href;
-        if(url.indexOf('?')!=-1){
-            var ary1 = url.split('?');
-            var ary2 = ary1[1].split('&');
-            var ary3 = ary2[0].split('=');
-            var name = ary3[1];
-        }
-        var fd = new FormData();
-        var files = $('#file')[0].files;
-        
-
-        // Check file selected or not
-        if(files.length > 0 ){
-        fd.append('file',files[0]);
-        fd.append('name',name);
-        $.ajax({
-            url: '../php/uploadFile.php',
-            type: 'post',
-            data:fd,
-            contentType: false,
-            processData: false,
-            success: function(response){
-                if(response == 0){
-                    alert('file not uploaded!');
-                }
-                else if(response == 1){
-                    alert("file duplicate!");
-                }
-                else{
-                    alert("Upload success!");
-                    refresh();
-                }
-            },
-        });
-        }else{
-        alert("Please select a file.");
-        }
-    });
-
 });
 
 
@@ -163,6 +123,42 @@ $("#tableId").on('click', '.del', function(val){
             console.log(output);
             alert("Delete success!");
             refresh();
+        },
+    });
+});
+
+$("#but_upload").click(function(){
+    var url = location.href;
+    if(url.indexOf('?')!=-1){
+        var ary1 = url.split('?');
+        var ary2 = ary1[1].split('&');
+        var ary3 = ary2[0].split('=');
+        var name = ary3[1];
+    }
+    var fd = new FormData();
+    var files = $('#files')[0].files;
+
+
+    // Check file selected or not
+    fd.append('file',files[0]);
+    fd.append('name',name);
+    $.ajax({
+        url: '../php/uploadFile.php',
+        type: 'post',
+        data:fd,
+        contentType: false,
+        processData: false,
+        success: function(response){
+            if(response == 0){
+                alert('file not uploaded!');
+            }
+            else if(response == 1){
+                alert("file duplicate!");
+            }
+            else{
+                alert("Upload success!");
+                refresh();
+            }
         },
     });
 });
